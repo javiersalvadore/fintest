@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+from findatapy.util import SwimPool; SwimPool()
 from findatapy.market import Market, MarketDataRequest, MarketDataGenerator
 import matplotlib.pyplot as plt
 from scipy.stats import pearsonr

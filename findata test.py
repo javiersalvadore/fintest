@@ -214,8 +214,8 @@ create_graph_dict()
 sortedepr = [float(i) for i in sortedepr]
 sortedeprsd = [float(i) for i in sortedeprsd]
 
-#plt.scatter(sortedeprsd,sortedepr)
-#plt.show()
+plt.scatter(sortedeprsd,sortedepr)
+plt.show()
 gendfclose.columns = [i for i in equitynames]
 
 def get_all_rates():
