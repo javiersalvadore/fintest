@@ -24,17 +24,17 @@ market = Market(market_data_generator=MarketDataGenerator())
 tempequitynames = input("Separados por comas, ingrese nombres para los activos a analizar: ")
 tempequitytickers = input("Separados por comas, ingrese los tickers de dichos activos: ")
 decimprec = int(input("Cuántos decimales? "))
-startdate = input("Desde cuándo? (DD/MM/YYYY) ")
+startinput = input("Desde cuándo? (DD/MM/YYYY) ")
 freq = input("Frecuencia de valores? ")
 
 precision = list(range(0, 101, decimprec))
 
 monthlist = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-operand = startdate.split("/")
-day = operand[0] + ' '
-month = monthlist[int(operand[1])-1] + ' '
-year = operand[2]
-start_date = day+month+year
+datesoperand = startinput.split("/")
+day = datesoperand[0] + ' '
+month = monthlist[int(datesoperand[1])-1] + ' '
+year = datesoperand[2]
+start_date = datesoperand[0] + ' ' + monthlist[int(datesoperand[1])-1] + ' ' + datesoperand[2]
 
 equitynames=tempequitynames.split(",")
 equitytickers=tempequitytickers.split(",")
