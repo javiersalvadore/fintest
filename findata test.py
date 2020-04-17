@@ -7,7 +7,6 @@ from sklearn import linear_model
 import itertools as it
 from decimal import *
 from chartpy import Chart, Style, Canvas
-import os
 import time
 
 getcontext().prec = 5
@@ -25,13 +24,23 @@ market = Market(market_data_generator=MarketDataGenerator())
 tempequitynames = input("Separados por comas, ingrese nombres para los activos a analizar: ")
 tempequitytickers = input("Separados por comas, ingrese los tickers de dichos activos: ")
 decimprec = int(input("Cuántos decimales? "))
+startdate = input("Desde cuándo? (DD/MM/YYYY) ")
+freq = input("Frecuencia de valores? ")
+
 precision = list(range(0, 101, decimprec))
+
+monthlist = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+operand = startdate.split("/")
+day = operand[0] + ' '
+month = monthlist[int(operand[1])-1] + ' '
+year = operand[2]
+start_date = day+month+year
 
 equitynames=tempequitynames.split(",")
 equitytickers=tempequitytickers.split(",")
 
 md_requestclose = MarketDataRequest(
-            start_date="01 Jan 2018",  # start date
+            start_date=start_date,  # start date
             data_source='yahoo',  # use Bloomberg as data source
             tickers=equitynames,  # ticker (findatapy)
             fields=['close'],  # which fields to download
