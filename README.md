@@ -1,4 +1,4 @@
-#FinTest
+## FinTest
 
 FinTest gets its name from my need of testing whether I could put together an equity ticker data scraper with Python. All it does is scrape the data from the Yahoo Finance database and compute some simple statistical indicators, then outputting a single scatterplot with some correlation coefficients.
 
